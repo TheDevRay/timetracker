@@ -59962,7 +59962,8 @@ var render = function() {
                                 attrs: {
                                   type: "text",
                                   id: "usrname",
-                                  placeholder: "What are you working on?"
+                                  placeholder: "What are you working on?",
+                                  autofocus: ""
                                 },
                                 domProps: { value: _vm.newTimerName },
                                 on: {
@@ -60040,7 +60041,8 @@ var render = function() {
                         attrs: {
                           type: "text",
                           id: "usrname",
-                          placeholder: "Project Name"
+                          placeholder: "Project Name",
+                          autofocus: ""
                         },
                         domProps: { value: _vm.newProjectName },
                         on: {
