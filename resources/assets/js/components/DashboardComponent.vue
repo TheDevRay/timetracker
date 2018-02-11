@@ -165,7 +165,7 @@
                  this.counter.timer.project = project
                  this.counter.seconds = parseInt(moment.duration(moment().diff(started)).asSeconds())
                  this.counter.ticker = setInterval(() => {
-                     const time = this._readableTimeFromSeconds(++vm.counter.seconds)
+                     const time = this._readableTimeFromSeconds(++this.counter.seconds)
 
                      this.activeTimerString = `${time.hours} Hours | ${time.minutes}:${time.seconds}`
                  }, 1000)
