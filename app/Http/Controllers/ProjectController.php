@@ -31,6 +31,6 @@ class ProjectController extends Controller
 
         return $project ? array_merge($project->toArray(), [
             'timers' => []
-        ]);
+        ]) : false;
     }
 }
