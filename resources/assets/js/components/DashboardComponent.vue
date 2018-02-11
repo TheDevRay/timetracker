@@ -52,7 +52,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <input v-model="newTimerName" type="text" class="form-control" id="usrname" placeholder="What are you working on?">
+                                    <input v-model="newTimerName" type="text" class="form-control" id="usrname" placeholder="What are you working on?" autofocus>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -76,7 +76,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <input v-model="newProjectName" type="text" class="form-control" id="usrname" placeholder="Project Name">
+                                <input v-model="newProjectName" type="text" class="form-control" id="usrname" placeholder="Project Name" autofocus>
                             </div>
                         </div>
                         <div class="modal-footer">
