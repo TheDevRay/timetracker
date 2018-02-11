@@ -33,7 +33,7 @@ class TimerController extends Controller
     public function stopRunning()
     {
         if ($timer = Timer::mine()->running()->first()) {
-            $time->update(['stopped_at' => new Carbon]);
+            $timer->update(['stopped_at' => new Carbon]);
         }
 
         return $timer;
