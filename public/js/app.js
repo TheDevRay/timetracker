@@ -59379,6 +59379,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -59511,6 +59515,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
 
             this.newProjectName = '';
+        },
+
+        /**
+         * Delete a timer.
+         */
+        deleteTimer: function deleteTimer(project, timer) {
+            window.axios.delete('/projects/' + timer.id + '/timers').then(function (response) {
+                project.timers.forEach(function (a, b, c) {
+                    if (a.id === timer.id) {
+                        project.timers = c.splice(b, c);
+                    }
+                });
+            });
         }
     },
 
@@ -59918,7 +59935,25 @@ var render = function() {
                                                 })
                                               ]
                                             )
-                                          : _vm._e()
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass: "btn btn-sm",
+                                            on: {
+                                              click: function($event) {
+                                                _vm.deleteTimer(project, timer)
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "glyphicon glyphicon-trash"
+                                            })
+                                          ]
+                                        )
                                       ])
                                     ]
                                   )

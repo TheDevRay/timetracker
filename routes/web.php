@@ -19,3 +19,4 @@ Route::post('/projects', 'ProjectController@store');
 Route::post('/projects/{id}/timers/stop', 'TimerController@stopRunning');
 Route::post('/projects/{id}/timers', 'TimerController@store');
 Route::get('/project/timers/active', 'TimerController@running');
+Route::delete('/projects/{id}/timers', 'TimerController@destroy');

@@ -38,4 +38,15 @@ class TimerController extends Controller
 
         return $timer;
     }
+
+    public function destroy(int $id)
+    {
+        if ($timer = Timer::with('project')->mine()->findOrFail($id)->first()) {
+            $timer->delete();
+
+            return $timer;
+        }
+
+        return response('Bad request', 400);
+    }
 }
