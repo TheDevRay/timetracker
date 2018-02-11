@@ -35,6 +35,10 @@
                                     <button v-if="showTimerForProject(project, timer)" class="btn btn-sm btn-danger" @click="stopTimer()">
                                         <i class="glyphicon glyphicon-stop"></i>
                                     </button>
+
+                                    <button class="btn btn-sm" @click="deleteTimer(project, timer)">
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                    </button>
                                 </div>
                             </li>
                         </ul>
@@ -233,6 +237,20 @@ export default {
                         .then(response => this.projects.push(response.data))
 
             this.newProjectName = ''
+        },
+
+        /**
+         * Delete a timer.
+         */
+        deleteTimer: function (project, timer) {
+            window.axios.delete(`/projects/${timer.id}/timers`)
+                        .then(response => {
+                            project.timers.forEach((a, b, c) => {
+                                if (a.id === timer.id) {
+                                    project.timers = c.splice(b, c);
+                                }
+                            })
+                        })
         }
     },
 
